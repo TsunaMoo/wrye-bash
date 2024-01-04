@@ -812,6 +812,15 @@ class NamesTweak_DwarfsToDwarves(_ATextReplacer):
     _tr_replacements = {r'\b(d|D)warfs\b': r'\1warves'}
 
 #------------------------------------------------------------------------------
+class NamesTweak_ChangeBookFontSize(_ATextReplacer):
+    """Reverts to default fontsize"""
+    tweak_name = _(u'Reverts books to default fontsize')
+    tweak_tip = _(u'Removes font size specifications in books.')
+    tweak_key = u'BSize'
+    tweak_choices = [(u'Remove Font Size', u'None')]
+    _tr_replacements = {r'<\s*font\s*size\s*=\s*(\"|\')\s*[0-9]*\s*(\"|\')>': r''}
+
+#------------------------------------------------------------------------------
 class NamesTweak_StaffsToStaves(_ATextReplacer):
     """Replaces 'staffs' with 'staves' for proper spelling."""
     tweak_name = _(u'Proper English Text: Staffs -> Staves')
